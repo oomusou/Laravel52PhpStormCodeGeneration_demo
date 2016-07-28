@@ -11,6 +11,9 @@ class PostService
     /** @var  PostRepository */
     private $postRepository;
 
+    /** @var int */
+    private $postId;
+
     /**
      * PostService constructor.
      * @param PostRepository $postRepository
@@ -28,5 +31,21 @@ class PostService
     public function showTitle(int $id, string $default) : string
     {
         return $this->postRepository->getTitle($id, $default);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPostId(): int
+    {
+        return $this->postId;
+    }
+
+    /**
+     * @param int $postId
+     */
+    public function setPostId(int $postId)
+    {
+        $this->postId = $postId;
     }
 }
