@@ -34,18 +34,12 @@ class PostService
     }
 
     /**
-     * @return int
-     */
-    public function getPostId(): int
-    {
-        return $this->postId;
-    }
-
-    /**
      * @param int $postId
+     * @return PostService
      */
-    public function setPostId(int $postId)
+    public function setPostId(int $postId): PostService
     {
         $this->postId = $postId;
+        return $this;
     }
 }
